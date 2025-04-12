@@ -2,8 +2,7 @@
 import { ReactLenis } from "lenis/react";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import MenuButton from "../components/MenuButton";
-import WhoIam from "../pages/WhoIAm";
+import ScrollSections from "../components/ScrollSections";
 
 export default function Home() {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
@@ -24,7 +23,7 @@ export default function Home() {
   return (
     <ReactLenis root>
       <Header windowWidth={windowWidth} />
-      <WhoIam />
+      <ScrollSections />
     </ReactLenis>
   );
 }
