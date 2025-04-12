@@ -43,7 +43,7 @@ const FadeInText: React.FC<Props> = ({ text }) => {
           fontWeight: 500,
           marginBottom: "6rem",
           fontSize: "2rem",
-          lineHeight: "3rem",
+          lineHeight: "3.5rem",
         }}
         className="text-white text-center text-3xl"
       >
