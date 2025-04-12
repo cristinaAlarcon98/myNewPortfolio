@@ -7,30 +7,31 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 type Props = {
   words: string[];
+  speed: number;
+  limits: { start: number; end: number }; // Refactored limits to an object
 };
 
-const TypeWriterText: React.FC<Props> = ({ words }) => {
+const TypeWriterText: React.FC<Props> = ({ words, speed, limits }) => {
   const animatedTextRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
   const typewriterRef = useRef<HTMLDivElement>(null); // Added ref for scroll-trigger animation
 
   useEffect(() => {
     // Cursor animation
-    /*     console.log()
     gsap.to(cursorRef.current, {
       opacity: 0,
       repeat: -1,
       yoyo: true,
-      duration: 0.5,
+      duration: 0.4, // Faster cursor blink
       ease: "power2.inOut",
-    }); */
+    });
 
     // Text animation
-    const tlMaster = gsap.timeline({ repeat: -1 });
+    const tlMaster = gsap.timeline({ repeat: -1, repeatDelay: 0.5 }); // Added delay between repeats
 
     words.forEach((word) => {
-      const tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-      tlText.to(animatedTextRef.current, { duration: 1, text: word });
+      const tlText = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 0.8 }); // Adjusted delay for smoother transitions
+      tlText.to(animatedTextRef.current, { duration: speed, text: word });
       tlMaster.add(tlText);
     });
 
@@ -40,10 +41,10 @@ const TypeWriterText: React.FC<Props> = ({ words }) => {
         opacity: 0,
         scrollTrigger: {
           trigger: typewriterRef.current,
-          start: "top top+=400",
-          end: "top top+=500", // Extend the range for a smoother disappearance
-          scrub: 1, // Ensure smooth scrubbing
-          markers: true, // Add markers to visualize the start and end points
+          start: `top top+=${limits.start}`, // Adjusted start point
+          end: `top top+=${limits.end}`, // Adjusted end point
+          scrub: 0.8, // Smoother scrubbing
+          markers: false, // Removed markers for cleaner UI
         },
       });
     });
@@ -52,7 +53,10 @@ const TypeWriterText: React.FC<Props> = ({ words }) => {
   }, []);
 
   return (
-    <div ref={typewriterRef} style={{ display: "flex", alignItems: "center" }}>
+    <div
+      ref={typewriterRef}
+      style={{ display: "flex", alignItems: "flex-start" }}
+    >
       <h2 ref={animatedTextRef} className="animated-text"></h2>
     </div>
   );

@@ -29,7 +29,7 @@ function HorizontalScroll() {
         end: "+=1500",
         scrub: 1,
         pin: true,
-        markers: true,
+        //markers: true,
       },
     });
   });
