@@ -12,6 +12,8 @@ const FadeInText: React.FC<Props> = ({ text }) => {
   const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!textRef.current) return; // Ensure the ref is not null
+
     const ctx = gsap.context(() => {
       gsap.fromTo(
         textRef.current,
@@ -24,13 +26,13 @@ const FadeInText: React.FC<Props> = ({ text }) => {
             trigger: textRef.current,
             start: "top 80%",
             end: "top 50%",
-            scrub: 1,
+            scrub: true, // Ensure smooth scrolling effect
           },
         }
       );
-    });
+    }, textRef); // Bind the context to the textRef
 
-    return () => ctx.revert();
+    return () => ctx.revert(); // Clean up the context on unmount
   }, []);
 
   return (
