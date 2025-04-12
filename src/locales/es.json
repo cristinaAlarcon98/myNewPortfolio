@@ -1,0 +1,9 @@
+{
+  "typewriter": ["CREATIVIDAD", "EMOCIONALIDAD", "PASIÓN"],
+  "creativity": {
+    "text": "La creatividad abarca la capacidad de descubrir nuevas y <span>ideas originales</span>, conexiones y soluciones a problemas. Mis juicios son <span>perspicaces</span> y mis percepciones son <span>frescas</span>."
+  },
+  "passion": {
+    "text": "Vivir la vida al máximo es mi <span>pasión</span>. Además, soy un jugador amateur de voleibol de playa, un lector profesional de libros, un virtuoso soñador despierto y <span>100%</span> amante de la playa."
+  }
+}

@@ -24,7 +24,6 @@ export default function Home() {
   return (
     <ReactLenis root>
       <Header windowWidth={windowWidth} />
-      <MenuButton />
       <WhoIam />
     </ReactLenis>
   );

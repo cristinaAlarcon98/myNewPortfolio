@@ -3,6 +3,10 @@
 // External imports
 import { ReactLenis, useLenis } from "lenis/react";
 import dynamic from "next/dynamic";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // Internal imports
 import TypeWriterText from "../components/gsap/TypeWriterText";
@@ -15,11 +19,33 @@ const HorizontalScroll = dynamic(
 );
 
 export function WhoIamPage() {
+  const typewriterRef = useRef(null); // Define the ref
+
   return (
     <div className="pt-[100px] bg-[#000303] w-[100vw]">
       {/* Section 1: Typewriter Text */}
       <section className="h-screen w-full flex justify-center items-center">
-        <TypeWriterText words={["CREATIVITY", "EMOTIONALITY", "PASSION"]} />
+        <div ref={typewriterRef}>
+          <TypeWriterText
+            words={[
+              "WELCOME TO MY SITE",
+              "I CODE. I CREATE. I EXPLORE.",
+              "HERE, TECH MEETS ART.",
+              "ENJOY THE JOURNEY",
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="bg-primary-foreground h-[100vh] w-full flex justify-center ">
+        <div className="flex flex-col md:flex-row justify-center w-10/12">
+          <p className="text-white text-center text-2xl">
+            Creativity encompasses the ability to discover new and{" "}
+            <span>original ideas</span>, connections, and solutions to problems.
+            My judgments are <span>insightful</span> and my perceptions are{" "}
+            <span>fresh</span>.
+          </p>
+        </div>
       </section>
 
       {/* Section 2: Creativity */}

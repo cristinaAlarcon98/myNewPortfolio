@@ -17,6 +17,12 @@ h2{
   font-size: 40px;
   color: var(--primary)
 }
+
+a {
+  font-family: Anton, sans-serif;
+  font-size: 1rem;
+  color: var(--primary)
+}
 p{
   font-size:13px;
   color: var(--primary);
