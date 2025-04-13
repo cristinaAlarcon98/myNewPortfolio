@@ -38,24 +38,18 @@ function HorizontalScroll() {
     <div className="flex md:flex-row flex-wrap">
       {/* Right Section */}
       <div className="square flex-col md:w-12/12 ">
-        <div className="slides-container overflow-hidden h-[500px]">
+        <div className="slides-container w-[2000px]">
+          {" "}
+          {/* Removed overflow-hidden */}
           <div className="slides flex space-x-4">
             {/* Slide Images */}
             {[...Array(4)].map((_, index) => (
-              <div
-                key={index}
-                className="d-flex flex-col items-center justify-center"
-              >
-                <h1>Project</h1>
-                <img
-                  src="/images/volley.png"
-                  alt="Volleyball Image"
-                  className="h-[500px] cursor-pointer"
-                  onClick={() =>
-                    window.open("https://www.google.com", "_blank")
-                  } // Navigate to Google on click
-                />
-              </div>
+              <img
+                src="/images/fractol.png"
+                alt="Volleyball Image"
+                className="w-[1000px] h-[400px] cursor-pointer transform transition-transform duration-300 hover:scale-105" // Increased width
+                onClick={() => window.open("https://www.google.com", "_blank")}
+              />
             ))}
           </div>
         </div>
