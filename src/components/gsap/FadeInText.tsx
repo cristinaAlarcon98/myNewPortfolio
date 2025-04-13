@@ -24,8 +24,24 @@ const FadeInText: React.FC<Props> = ({ text }) => {
           duration: 1.5,
           scrollTrigger: {
             trigger: textRef.current,
-            start: "top 80%",
+            start: "top 90%",
             end: "top 50%",
+            scrub: true, // Ensure smooth scrolling effect
+          },
+        }
+      );
+
+      gsap.fromTo(
+        textRef.current,
+        { opacity: 1, y: 0 },
+        {
+          opacity: 0,
+          y: -50,
+          duration: 1.5,
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: "top 20%",
+            end: "top 0%",
             scrub: true, // Ensure smooth scrolling effect
           },
         }
