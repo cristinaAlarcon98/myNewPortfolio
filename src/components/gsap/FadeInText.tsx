@@ -24,7 +24,7 @@ const FadeInText: React.FC<Props> = ({ text }) => {
           duration: 1.5,
           scrollTrigger: {
             trigger: textRef.current,
-            start: "top 90%",
+            start: "top 100%",
             end: "top 50%",
             scrub: true, // Ensure smooth scrolling effect
           },
