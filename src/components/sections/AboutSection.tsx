@@ -42,17 +42,14 @@ const SectionFadeInText = () => {
   );
 
   return (
-    <div>
-      <section className="bg-primary-foreground h-[100vh] w-full flex justify-center">
-        <div className="flex flex-col md:flex-column justify-center w-6/12">
-          <FadeInText text={firstPharagraph} />
-          <FadeInText text={secondPharagraph} />
-          <FadeInText text={thirdPharagraph} />
-          <FadeInText text={fourthPharagraph} />
-        </div>
-      </section>
-      <div className="mb-[400px]" /> {/* Increased spacing */}
-    </div>
+    <section className="bg-primary-foreground h-[120vh] w-full flex justify-center flex-direction-col">
+      <div className="flex flex-col md:flex-column justify-center w-6/12">
+        <FadeInText text={firstPharagraph} />
+        <FadeInText text={secondPharagraph} />
+        <FadeInText text={thirdPharagraph} />
+        <FadeInText text={fourthPharagraph} />
+      </div>
+    </section>
   );
 };
 

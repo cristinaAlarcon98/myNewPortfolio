@@ -5,7 +5,7 @@ const SectionTypewriter = () => {
   const typewriterRef = useRef(null);
 
   return (
-    <section className="h-screen w-full flex justify-center items-center mb-60">
+    <section className="h-[110vh] w-full flex justify-center items-center pb-80">
       <div ref={typewriterRef}>
         <TypeWriterText
           words={[

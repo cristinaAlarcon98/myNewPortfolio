@@ -3,7 +3,8 @@ import BlobAnimation from "../others/BlobCircle";
 
 const SectionHorizontalScroll = () => {
   return (
-    <section className="bg-primary-foreground p-5 mb-[150px] overflow-x-hidden">
+    <section className="h-[200vh] overflow-x-hidden pt-80">
+      {/* Added h-[80vh] to reduce height */}
       <HorizontalScroll />
     </section>
   );

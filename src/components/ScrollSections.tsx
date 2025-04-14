@@ -6,9 +6,15 @@ import ProjectsSection from "./sections/ProjectsSection";
 export default function ScrollSections() {
   return (
     <div className="pt-[100px] bg-[#000303] w-[100vw]">
-      <MainSection />
-      <AboutSection />
-      <ProjectsSection />
+      <div className="mb-[100px]">
+        <MainSection />
+      </div>
+      <div className="mb-[100px]">
+        <AboutSection />
+      </div>
+      <div>
+        <ProjectsSection />
+      </div>
     </div>
   );
 }

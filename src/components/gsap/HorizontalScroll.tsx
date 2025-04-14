@@ -64,12 +64,14 @@ function HorizontalScroll() {
         <div className="slides-container w-[2000px]">
           {" "}
           {/* Removed overflow-hidden */}
-          <div className="slides flex space-x-4">
+          <div className="slides flex space-x-12 ml-8">
+            {" "}
+            {/* Added margin-left to shift images to the right */}
             {/* Slide Images */}
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="relative w-[1000px] h-[400px] cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                className="relative w-[900px] h-[350px] cursor-pointer transform transition-transform duration-300 hover:scale-105" // Reduced size
                 onClick={() => window.open(project.url, "_blank")}
               >
                 <img
