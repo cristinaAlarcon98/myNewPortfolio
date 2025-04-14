@@ -37,37 +37,22 @@ function HorizontalScroll() {
       scrollTrigger: {
         trigger: ".slides-container",
         start: "center center",
-        end: "+=1500",
+        end: "bottom top", // Adjust end value to ensure proper unpinning
         scrub: 1,
         pin: true,
-      },
-    });
-
-    // Animation for text element
-    gsap.to(".text-element", {
-      scrollTrigger: {
-        trigger: window.innerWidth < 768 ? ".pharagraph" : ".text-element",
-        start:
-          window.innerWidth < 768 ? "bottom+=260px center" : "center center",
-        end: "+=1500",
-        scrub: 1,
-        pin: true,
-        //markers: true,
+        pinReparent: true, // Use pinReparent to manage pinning behavior
+        markers: true,
       },
     });
   });
 
   return (
     <div className="flex md:flex-row flex-wrap">
-      {/* Right Section */}
       <div className="square flex-col md:w-12/12 ">
         <div className="slides-container w-[2000px]">
           {" "}
-          {/* Removed overflow-hidden */}
-          <div className="slides flex space-x-12 ml-8">
+          <div className="slides flex space-x-12 ml-40">
             {" "}
-            {/* Added margin-left to shift images to the right */}
-            {/* Slide Images */}
             {projects.map((project, index) => (
               <div
                 key={index}
