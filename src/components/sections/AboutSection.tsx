@@ -44,7 +44,7 @@ const SectionFadeInText = () => {
   return (
     <div>
       <section className="bg-primary-foreground h-[100vh] w-full flex justify-center">
-        <div className="flex flex-col md:flex-column justify-center w-7/12">
+        <div className="flex flex-col md:flex-column justify-center w-6/12">
           <FadeInText text={firstPharagraph} />
           <FadeInText text={secondPharagraph} />
           <FadeInText text={thirdPharagraph} />

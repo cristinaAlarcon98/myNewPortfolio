@@ -7,6 +7,29 @@ import BlobCircle from "../others/BlobCircle";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function HorizontalScroll() {
+  const projects = [
+    {
+      name: "My Digital Art",
+      url: "https://www.google.com",
+      src: "/images/fractol.png",
+    },
+    {
+      name: "KamyLikamile",
+      url: "https://www.google.com",
+      src: "/images/kamilikamile.png",
+    },
+    {
+      name: "StorySpark",
+      url: "https://www.google.com",
+      src: "/images/storyspark.png",
+    },
+    {
+      name: "42London",
+      url: "https://www.google.com",
+      src: "/images/42london.png",
+    },
+  ];
+
   useGSAP(() => {
     // Animation for slides
     gsap.to(".slides", {
@@ -43,13 +66,23 @@ function HorizontalScroll() {
           {/* Removed overflow-hidden */}
           <div className="slides flex space-x-4">
             {/* Slide Images */}
-            {[...Array(4)].map((_, index) => (
-              <img
-                src="/images/fractol.png"
-                alt="Volleyball Image"
-                className="w-[1000px] h-[400px] cursor-pointer transform transition-transform duration-300 hover:scale-105" // Increased width
-                onClick={() => window.open("https://www.google.com", "_blank")}
-              />
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="relative w-[1000px] h-[400px] cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                onClick={() => window.open(project.url, "_blank")}
+              >
+                <img
+                  src={project.src}
+                  alt={`${project.name} Image`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white text-xl font-semibold">
+                    {project.name}
+                  </span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
